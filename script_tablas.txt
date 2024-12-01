@@ -1,0 +1,42 @@
+CREATE TABLE personal (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nombre varchar(200) DEFAULT NULL,
+  direccion varchar(300) DEFAULT NULL,
+  telefono varchar(15) DEFAULT NULL,
+  estatus varchar(1) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+
+CREATE TABLE Clientes(
+id int(11) NOT NULL AUTO_INCREMENT,
+nombre varchar(200) NOT NULL,
+dirección varchar(200) NOT NULL,
+teléfono varchar(15) NOT NULL,
+correo_electronico varchar(100) NOT NULL,
+ciudad varchar(50) NOT NULL,
+PRIMARY KEY(id)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+
+CREATE TABLE Articulos (
+    id INT NOT NULL AUTO_INCREMENT, 
+    descripcion VARCHAR(255) NOT NULL,          
+    precio DECIMAL(10, 2) NOT NULL,             
+    cantidad_almacen INT NOT NULL,              
+    fecha_caducidad DATE,
+PRIMARY KEY(id)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+
+
+CREATE TABLE ventas (
+    id_venta INT AUTO_INCREMENT PRIMARY KEY,
+    id_articulo INT NOT NULL,
+    id_cliente INT NOT NULL,
+    cantidad INT NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    iva DECIMAL(10, 2) NOT NULL,
+    subtotal DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    fecha_venta DATE,
+    FOREIGN KEY (id_articulo) REFERENCES articulos(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
