@@ -1,3 +1,4 @@
+import ArticulosVue from '@/modulos/articulos/vistas/ArticulosVue.vue'
 import Personal_AgregarVue from '@/modulos/personal/vistas/Personal_AgregarVue.vue'
 import PersonalEditarVue from '@/modulos/personal/vistas/PersonalEditarVue.vue'
 import PersonalElimininarVue from '@/modulos/personal/vistas/PersonalElimininarVue.vue'
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/personal/:id/eliminar',
       name: 'personalEliminar',
       component: PersonalElimininarVue,
+    },
+    {
+      path: '/articulos',
+      name: 'articulos',
+      component: ArticulosVue,
     },
   ],
 })
