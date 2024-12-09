@@ -7,6 +7,7 @@ const app = express();
 //Configurar rutas para el acceso personal
 import personalRutas from './routes/personalRutas';
 import articulosRutas from './routes/articulosRutas';
+import clientesRutas from './routes/clientesRutas';
 
 //Activar el uso de CORS
 app.use(cors());
@@ -19,6 +20,7 @@ const PORT = 3001;
 //Activar las ruta base
 app.use('/api/personal', personalRutas);
 app.use('/api/articulos', articulosRutas);
+app.use('/api/clientes', clientesRutas);
 
 // app.get('/hola', (_req, res) => {
 //     let fecha = new Date().toLocaleDateString();

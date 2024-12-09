@@ -3,8 +3,8 @@ export interface Clientes {
     nombre: string;
     direccion: string; 
     telefono: string; 
-    correo_electronico: string; 
+    correoElectronico: string; 
     ciudad: string;
 }
 
-export type ClienteAgregar = Omit<Clientes, 'id'>;
+export type ClienteNuevo = Omit<Clientes, 'id'>;

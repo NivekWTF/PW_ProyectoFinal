@@ -41,7 +41,7 @@ export const useClientes = () => {
     return {
         clientes,
         mensaje,
-        traeClientes: traeClientes,
+        traeClientes,
         agregarClientes,
         traeClientesId,
         actualizarClientes,

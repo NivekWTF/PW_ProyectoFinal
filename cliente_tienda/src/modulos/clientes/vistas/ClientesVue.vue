@@ -33,7 +33,7 @@
                 <td>{{cliente.nombre}}</td>
                 <td>{{cliente.direccion}}</td>
                 <td>{{cliente.telefono}}</td>
-                <td>{{cliente.correoElectronico}}</td>
+                <td>{{cliente.correo_electronico}}</td>
                 <td>{{cliente.ciudad}}</td>
                 <td class="centrado">
                     <div class="btn-group" role="group" aria-label="Basic outlined example"></div>
@@ -55,6 +55,7 @@
     const { traeClientes, clientes} = useClientes();
     onMounted(async() => {
        await traeClientes();
+       console.log(clientes.value);
     });
 </script>
 
