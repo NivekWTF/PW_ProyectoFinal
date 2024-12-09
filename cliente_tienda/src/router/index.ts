@@ -1,4 +1,5 @@
 import ArticulosVue from '@/modulos/articulos/vistas/ArticulosVue.vue'
+import ClientesVue from '@/modulos/clientes/vistas/ClientesVue.vue'
 import Personal_AgregarVue from '@/modulos/personal/vistas/Personal_AgregarVue.vue'
 import PersonalEditarVue from '@/modulos/personal/vistas/PersonalEditarVue.vue'
 import PersonalElimininarVue from '@/modulos/personal/vistas/PersonalElimininarVue.vue'
@@ -37,6 +38,11 @@ const router = createRouter({
       path: '/articulos',
       name: 'articulos',
       component: ArticulosVue,
+    },
+    {
+      path: '/clientes',
+      name: 'clientes',
+      component: ClientesVue,
     },
   ],
 })
