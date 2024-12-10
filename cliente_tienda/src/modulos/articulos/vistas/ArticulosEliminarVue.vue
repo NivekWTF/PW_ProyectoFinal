@@ -2,7 +2,7 @@
     <div class="container mt-5" v-if="articulos[0]">
         <div class="card">
             <div class="card-header">
-                <h4>Editar personal</h4>
+                <h4>Eliminar personal</h4>
             </div>
                 <div class="alert alert-warning" role="alert">
                     ¿Está seguro de eliminar la información?

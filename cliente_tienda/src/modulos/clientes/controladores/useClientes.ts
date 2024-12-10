@@ -9,7 +9,6 @@ export const useClientes = () => {
     const traeClientes = async () => {
         const respuesta = await ClientesAPI.get<Clientes[]>('/')
         clientes.value = respuesta.data
-        console.log(clientes.value)
     }
 
     const traeClientesId = async (id:number) => {
@@ -18,7 +17,9 @@ export const useClientes = () => {
     }
 
     const agregarClientes = async (clientes:ClienteAgregar) => {
+        console.log('aquitambien')
         const respuesta = await ClientesAPI.post('/', clientes)
+        console.log(respuesta.data)
         if(respuesta.data.affectedRows >= 1){
            mensaje.value = 1
         }
@@ -26,6 +27,7 @@ export const useClientes = () => {
 
     const actualizarClientes = async (clientes:Clientes) => {
         const respuesta = await ClientesAPI.put('/', clientes)
+        console.log(respuesta.data)
         if(respuesta.data.affectedRows >= 1){
             mensaje.value = 1
         }

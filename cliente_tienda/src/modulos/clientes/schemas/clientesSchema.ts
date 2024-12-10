@@ -17,10 +17,30 @@ export const ClienteSchema = toTypedSchema(
             .max(15, { message: 'El teléfono no debe exceder los 15 caracteres' })
             .regex(/^\+?[0-9\s-]+$/, { message: 'El teléfono debe contener solo números, espacios o guiones' }),
         correoElectronico: zod.string()
+            .min(5, { message: 'El correo electrónico debe tener al menos 5 caracteres' })
             .email({ message: 'El correo electrónico no es válido' })
             .max(100, { message: 'El correo electrónico no debe exceder los 100 caracteres' }),
         ciudad: zod.string()
             .min(2, { message: 'La ciudad debe tener al menos 2 caracteres' })
             .max(50, { message: 'La ciudad no debe exceder los 50 caracteres' })
-    })
+    }).or(
+        zod.object({
+            nombre: zod.string()
+            .min(3, { message: 'El nombre debe tener al menos 3 caracteres' })
+            .max(200, { message: 'El nombre no debe exceder los 200 caracteres' }),
+        direccion: zod.string()
+            .min(5, { message: 'La dirección debe tener al menos 5 caracteres' })
+            .max(200, { message: 'La dirección no debe exceder los 200 caracteres' }),
+        telefono: zod.string()
+            .min(7, { message: 'El teléfono debe tener al menos 7 dígitos' })
+            .max(15, { message: 'El teléfono no debe exceder los 15 caracteres' })
+            .regex(/^\+?[0-9\s-]+$/, { message: 'El teléfono debe contener solo números, espacios o guiones' }),
+        correo_electronico: zod.string()
+            .min(5, { message: 'El correo electrónico debe tener al menos 5 caracteres' })
+            .email({ message: 'El correo electrónico no es válido' })
+            .max(100, { message: 'El correo electrónico no debe exceder los 100 caracteres' }),
+        ciudad: zod.string()
+            .min(2, { message: 'La ciudad debe tener al menos 2 caracteres' })
+            .max(50, { message: 'La ciudad no debe exceder los 50 caracteres' })
+    }))
 );

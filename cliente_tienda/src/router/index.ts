@@ -2,6 +2,9 @@ import ArticulosAgregarVue from '@/modulos/articulos/vistas/ArticulosAgregarVue.
 import ArticulosEditarVue from '@/modulos/articulos/vistas/ArticulosEditarVue.vue'
 import ArticulosEliminarVue from '@/modulos/articulos/vistas/ArticulosEliminarVue.vue'
 import ArticulosVue from '@/modulos/articulos/vistas/ArticulosVue.vue'
+import ClientesAgregarVue from '@/modulos/clientes/vistas/ClientesAgregarVue.vue'
+import ClientesEditarVue from '@/modulos/clientes/vistas/ClientesEditarVue.vue'
+import ClientesEliminarVue from '@/modulos/clientes/vistas/ClientesEliminarVue.vue'
 import ClientesVue from '@/modulos/clientes/vistas/ClientesVue.vue'
 import Personal_AgregarVue from '@/modulos/personal/vistas/Personal_AgregarVue.vue'
 import PersonalEditarVue from '@/modulos/personal/vistas/PersonalEditarVue.vue'
@@ -61,6 +64,21 @@ const router = createRouter({
       path: '/clientes',
       name: 'clientes',
       component: ClientesVue,
+    },
+    {
+      path: '/clientes/agregar',
+      name: 'clientesAgregar',
+      component: ClientesAgregarVue,
+    },
+    {
+      path: '/clientes/:id/editar',
+      name: 'clientesEditar',
+      component: ClientesEditarVue,
+    },
+    {
+      path: '/clientes/:id/eliminar',
+      name: 'clientesEliminar',
+      component: ClientesEliminarVue,
     },
   ],
 })

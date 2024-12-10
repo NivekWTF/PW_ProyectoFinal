@@ -21,12 +21,12 @@ router.get('/descrip/:descrip', async (req: Request, res:Response) => {
 
 router.post('/', async (req: Request, res:Response) => {
     try{
-        const {nombre, direccion, telefono, correoElectronico, ciudad} = req.body;
+        const {nombre, direccion, telefono, correo_electronico, ciudad} = req.body;
         const nuevo = await clientesServices.agregarCliente({
             nombre, 
             direccion, 
             telefono, 
-            correoElectronico, 
+            correo_electronico,
             ciudad
         });
         res.send(nuevo);
@@ -39,13 +39,13 @@ router.post('/', async (req: Request, res:Response) => {
 //Modificar datos
 router.put('/', async (req: Request, res:Response) => {
     try{
-        const {id,nombre, direccion, telefono, correoElectronico, ciudad} = req.body;
+        const {id,nombre, direccion, telefono, correo_electronico, ciudad} = req.body;
         const modificado = await clientesServices.modificarCliente({
             id,
             nombre, 
             direccion, 
             telefono, 
-            correoElectronico, 
+            correo_electronico, 
             ciudad
         });
         res.send(modificado);

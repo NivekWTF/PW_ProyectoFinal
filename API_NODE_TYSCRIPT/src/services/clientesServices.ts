@@ -58,22 +58,26 @@ export const encuentraClientesNombre = async (descripcion: string) => {
 export const agregarCliente = async (nuevo: ClienteNuevo) => {
     try {
         const validacion = clienteSchema.safeParse(nuevo);
+        console.log(validacion);
         if (!validacion.success) {
             return {error: validacion.error};
         }
         const [results] = await conexion.query('INSERT INTO clientes (nombre, direccion, telefono, correo_electronico, ciudad) VALUES (?, ?, ?, ?, ?)', 
-            [nuevo.nombre, nuevo.direccion, nuevo.telefono, nuevo.correoElectronico, nuevo.ciudad]);
-
+            [nuevo.nombre, nuevo.direccion, nuevo.telefono, nuevo.correo_electronico, nuevo.ciudad]);
+            console.log(results);
         return results;
+        
     } catch (error) {
+        console.log(error);
         return {error: "No se pudo insertar el cliente"};
     }
 }
 
 export const modificarCliente = async (modificado: Clientes) => {
     try {
-        const [results] = await conexion.query('UPDATE clientes SET nombre = ?, precio = ?, direccion = ?, telefono = ?, correo_electronico = ?, ciudad = ? WHERE id = ?', 
-            [modificado.nombre, modificado.direccion, modificado.telefono, modificado.correoElectronico, modificado.ciudad , modificado.id]);
+        const [results] = await conexion.query('UPDATE clientes SET nombre = ?, direccion = ?, telefono = ?, correo_electronico = ?, ciudad = ? WHERE id = ?', 
+            [modificado.nombre, modificado.direccion, modificado.telefono, modificado.correo_electronico, modificado.ciudad , modificado.id]);
+            console.log(results);
 
         return results;
     } catch (error) {
