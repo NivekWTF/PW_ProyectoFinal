@@ -22,7 +22,7 @@
               <RouterLink class="nav-link item" to="/ventas">Ventas</RouterLink>
             </li>
             <li>
-              <RouterLink class="nav-link item" to="/clientes/registro">Registro</RouterLink>
+              <RouterLink class="nav-link item" to="/registro">Registro</RouterLink>
             </li>
             
           </ul>
