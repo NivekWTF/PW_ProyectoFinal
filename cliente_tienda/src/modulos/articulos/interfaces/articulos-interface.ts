@@ -2,7 +2,7 @@ export interface Articulos {
     id: number;
     descripcion: string;
     precio: number;
-    cantidad_almacen: string;
+    cantidad_almacen: number;
     fecha_caducidad: string;
 }
 

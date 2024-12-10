@@ -19,6 +19,8 @@ export const usePersonal = () => {
 
     const agregarPersonal = async (personal:PersonalAgregar) => {
         const respuesta = await personalAPI.post('/', personal)
+        console.log(personal)
+        console.log(respuesta.data)
         if(respuesta.data.affectedRows >= 1){
            mensaje.value = 1
         }

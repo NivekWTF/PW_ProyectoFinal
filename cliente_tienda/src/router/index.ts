@@ -1,3 +1,6 @@
+import ArticulosAgregarVue from '@/modulos/articulos/vistas/ArticulosAgregarVue.vue'
+import ArticulosEditarVue from '@/modulos/articulos/vistas/ArticulosEditarVue.vue'
+import ArticulosEliminarVue from '@/modulos/articulos/vistas/ArticulosEliminarVue.vue'
 import ArticulosVue from '@/modulos/articulos/vistas/ArticulosVue.vue'
 import ClientesVue from '@/modulos/clientes/vistas/ClientesVue.vue'
 import Personal_AgregarVue from '@/modulos/personal/vistas/Personal_AgregarVue.vue'
@@ -38,6 +41,21 @@ const router = createRouter({
       path: '/articulos',
       name: 'articulos',
       component: ArticulosVue,
+    },
+    {
+      path: '/articulos/agregar',
+      name: 'articulosAgregar',
+      component: ArticulosAgregarVue,
+    },
+    {
+      path: '/articulos/:id/editar',
+      name: 'articulosEditar',
+      component: ArticulosEditarVue,
+    },
+    {
+      path: '/articulos/:id/eliminar',
+      name: 'articulosEliminar',
+      component: ArticulosEliminarVue,
     },
     {
       path: '/clientes',

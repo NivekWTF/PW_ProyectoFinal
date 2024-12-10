@@ -2,7 +2,7 @@
     <div class="container mt-5" v-if="personal[0]">
         <div class="card">
             <div class="card-header">
-                <h4>Agregar personal</h4>
+                <h4>Editar personal</h4>
             </div>
                 <div v-if="mensaje == 1" class="alert alert-success" role="alert">
                     Datos actualizados con éxito

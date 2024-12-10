@@ -15,12 +15,16 @@ export const useArticulos = () => {
     const traeArticulosId = async (id:number) => {
         const respuesta = await ArticulosAPI.get<Articulos[]>('/'+id)
         articulos.value = respuesta.data
+        console.log(articulos.value)
     }
 
     const agregarArticulos = async (articulos:ArticuloAgregar) => {
         const respuesta = await ArticulosAPI.post('/', articulos)
+        console.log(respuesta.data)
         if(respuesta.data.affectedRows >= 1){
+            console.log('1')
            mensaje.value = 1
+           
         }
     }
 
